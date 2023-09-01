@@ -1,18 +1,30 @@
 import React, { FC } from "react";
+import { TypePeople } from "../page/PeaplePage";
 
-interface IPeople {
-  id: number;
-  fullName: string;
-  img: string;
-  bio?: string;
-}
 interface IProps {
-  people: IPeople;
+  people: TypePeople;
 }
 const List: FC<IProps> = ({ people }) => {
   return (
-    <div>
-      <div>{people.fullName}</div>
+    <div className="col-12 col-lg-6">
+      <div className="card">
+        <div className="card-body d-flex align-items-center">
+          <img
+            className="img-fluid rounded img-thumbnail"
+            width={100}
+            height={100}
+            src={people.img}
+            alt={people.fullName}
+          />
+          <div className="me-3">
+            <p>
+              <span className="h2">{people.fullName}</span>
+              <span className="badge bg-primary me-3">سال {people.age}</span>
+            </p>
+            <p className="text-muted">{people.bio}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
