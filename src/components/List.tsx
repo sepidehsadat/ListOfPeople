@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { FC } from "react";
 
-export default function List() {
-  return (
-    <div>List</div>
-  )
+interface IPeople {
+  id: number;
+  fullName: string;
+  img: string;
+  bio?: string;
 }
+interface IProps {
+  peoples: IPeople[];
+}
+const List: FC<IProps> = ({ peoples }) => {
+  return (
+    <div>
+      {peoples.map((people) => (
+        <>
+          <div>{people.fullName}</div>
+        </>
+      ))}
+    </div>
+  );
+};
+export default List;
