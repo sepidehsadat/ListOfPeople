@@ -13,11 +13,15 @@ interface Istate {
 export default function PeaplePage() {
   const [peoples, setPeoples] = useState<Istate[]>([
     { id: 1, fullName: "sepideh", age: 27, img: "test", bio: "test" },
-    { id: 2, fullName: "sepideh2", age: 27, img: "test", bio: "test" },
+    { id: 2, fullName: "sara", age: 27, img: "test", bio: "test" },
   ]);
   return (
     <div className="">
-      <List peoples={peoples} />
+      {peoples.map((people) => (
+        <>
+          <List people={people} />
+        </>
+      ))}
     </div>
   );
 }

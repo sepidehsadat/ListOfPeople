@@ -7,16 +7,12 @@ interface IPeople {
   bio?: string;
 }
 interface IProps {
-  peoples: IPeople[];
+  people: IPeople;
 }
-const List: FC<IProps> = ({ peoples }) => {
+const List: FC<IProps> = ({ people }) => {
   return (
     <div>
-      {peoples.map((people) => (
-        <>
-          <div>{people.fullName}</div>
-        </>
-      ))}
+      <div>{people.fullName}</div>
     </div>
   );
 };
