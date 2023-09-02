@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Style from "./PeaplePage";
 import List from "../components/List";
+import Add from "../components/Add";
 
 export interface TypePeople {
   id: number;
@@ -23,6 +24,7 @@ const PeaplePage = () => {
           <List people={people} />
         </>
       ))}
+      <Add peoples={peoples} setPeoples={setPeoples}/>
     </div>
   );
 };
