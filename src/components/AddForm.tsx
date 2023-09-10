@@ -1,36 +1,43 @@
 import { Dispatch, FC, FormEvent, SetStateAction, useState } from "react";
-
+import "./AddForm.css"
 import { TypePeople } from "../page/HomePage";
 
-interface IProps {
+interface IProps
+{
   peoples: TypePeople[];
   setPeoples: Dispatch<SetStateAction<TypePeople[]>>;
 }
 
-const AddForm: FC<IProps> = ({ peoples, setPeoples }) => {
+const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
+{
   const [fullName, setFullName] = useState<string>("");
   const [age, setAge] = useState<string | number>("");
   const [img, setImg] = useState<string>("");
   const [bio, setBio] = useState<string>("");
 
-  const handleResetState = (): void => {
+  const handleResetState = (): void =>
+  {
     setFullName("");
     setAge("");
     setImg("");
     setBio("");
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void =>
+  {
     event.preventDefault();
-    if (!fullName) {
+    if (!fullName)
+    {
       return alert("نام و نام خانوادگی الزامی می باشد");
     }
 
-    if (!age) {
+    if (!age)
+    {
       return alert("سن الزامی می باشد");
     }
 
-    if (!img) {
+    if (!img)
+    {
       return alert("آدرس تصویر الزامی می باشد");
     }
 
@@ -53,7 +60,7 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) => {
       <form
         autoComplete="off"
         onSubmit={(e) => handleSubmit(e)}
-        className="mt-3"
+        className="form"
       >
         <input
           type="text"
