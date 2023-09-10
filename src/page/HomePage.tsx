@@ -17,6 +17,7 @@ const HomePage = () =>
   const [peoples, setPeoples] = useState<TypePeople[]>([
     { id: 1, fullName: "sepideh", age: 27, img: "test", bio: "test" },
     { id: 2, fullName: "sara", age: 27, img: "test", bio: "test" },
+    { id: 3, fullName: "sara", age: 27, img: "test", bio: "test" },
   ]);
   return (
     <div className="home_page">
