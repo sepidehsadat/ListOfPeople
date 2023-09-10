@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import { TypePeople } from "../page/PeaplePage";
+import { TypePeople } from "../page/HomePage";
 
 interface IProps {
   people: TypePeople;
 }
-const List: FC<IProps> = ({ people }) => {
+const PeopleCard: FC<IProps> = ({ people }) => {
   return (
     <div className="col-12 col-lg-6">
       <div className="card">
@@ -28,4 +28,4 @@ const List: FC<IProps> = ({ people }) => {
     </div>
   );
 };
-export default List;
+export default PeopleCard;

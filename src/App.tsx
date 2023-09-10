@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
-import PeaplePage from "./page/PeaplePage";
+import HomePage from "./page/HomePage";
 
-function App() {
+function App()
+{
   return (
     <div className="App">
-      <PeaplePage/>
+      <HomePage />
     </div>
   );
 }

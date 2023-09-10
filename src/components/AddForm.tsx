@@ -1,13 +1,13 @@
 import { Dispatch, FC, FormEvent, SetStateAction, useState } from "react";
 
-import { TypePeople } from "./../page/PeaplePage";
+import { TypePeople } from "../page/HomePage";
 
 interface IProps {
   peoples: TypePeople[];
   setPeoples: Dispatch<SetStateAction<TypePeople[]>>;
 }
 
-const Add: FC<IProps> = ({ peoples, setPeoples }) => {
+const AddForm: FC<IProps> = ({ peoples, setPeoples }) => {
   const [fullName, setFullName] = useState<string>("");
   const [age, setAge] = useState<string | number>("");
   const [img, setImg] = useState<string>("");
@@ -94,4 +94,4 @@ const Add: FC<IProps> = ({ peoples, setPeoples }) => {
     </div>
   );
 };
-export default Add;
+export default AddForm;
