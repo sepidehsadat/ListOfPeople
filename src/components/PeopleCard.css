@@ -1,6 +1,22 @@
 .people_card {
-    border: 1px solid #000;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 10px;
     width: 45%;
+    background: rgb(0, 159, 255);
+    background: linear-gradient(12deg, rgba(255, 255, 255, 0) 13%, rgba(0, 159, 255, 1) 100%);
+    color: #fff;
+}
+
+.text-muted {
+    text-align: justify;
+}
+
+.img-muted {
+    border-radius: 20px 0 20px 0;
+}
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
 }

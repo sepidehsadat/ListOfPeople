@@ -13,7 +13,7 @@ const PeopleCard: FC<IProps> = ({ people }) =>
       <div className="card">
         <div className="card-body d-flex align-items-center">
           <img
-            className="img-fluid rounded img-thumbnail"
+            className="img-muted"
             width={100}
             height={100}
             src={people.img}
@@ -22,7 +22,7 @@ const PeopleCard: FC<IProps> = ({ people }) =>
           <div className="me-3">
             <p>
               <span className="h2">{people.fullName}</span>
-              <span className="badge bg-primary me-3">سال {people.age}</span>
+              <span className="badge bg-primary me-3">{people.age}age </span>
             </p>
             <p className="text-muted">{people.bio}</p>
           </div>
