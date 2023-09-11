@@ -1,5 +1,7 @@
 import { Dispatch, FC, FormEvent, SetStateAction, useState } from "react";
+import PInput from "../components/PInput";
 import "./AddForm.css"
+// import React from "react";
 import { TypePeople } from "../page/HomePage";
 
 interface IProps
@@ -7,9 +9,9 @@ interface IProps
   peoples: TypePeople[];
   setPeoples: Dispatch<SetStateAction<TypePeople[]>>;
 }
-
 const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
 {
+  // name = React.createRef<PInput>();
   const [fullName, setFullName] = useState<string>("");
   const [age, setAge] = useState<string | number>("");
   const [img, setImg] = useState<string>("");
@@ -62,6 +64,7 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
         onSubmit={(e) => handleSubmit(e)}
         className="form"
       >
+        {/* <JAInput title="Name:" placeholder="Please enter name ..." ref={this.name} /> */}
         <input
           type="text"
           className="form-control mb-2"
