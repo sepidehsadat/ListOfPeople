@@ -1,10 +1,10 @@
 .people_card {
     border-radius: 20px;
     padding: 10px;
-    width: 45%;
-    background: rgb(0, 159, 255);
-    background: linear-gradient(12deg, rgba(255, 255, 255, 0) 13%, rgba(0, 159, 255, 1) 100%);
+    width: 290px;
+    background: rgb(164 124 243 / 7%);
     color: #fff;
+    border: 2px solid #a47cf3;
 }
 
 .text-muted {
@@ -12,11 +12,17 @@
 }
 
 .img-muted {
-    border-radius: 20px 0 20px 0;
+    border-radius: 50%;
 }
-.card-body{
+
+.card-body {
     display: flex;
-    justify-content: space-between;
     gap: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+}
+
+.people_card .title {
+    font-size: 20px
 }

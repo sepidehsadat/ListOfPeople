@@ -19,14 +19,12 @@ const PeopleCard: FC<IProps> = ({ people }) =>
             src={people.img}
             alt={people.fullName}
           />
-          <div className="me-3">
-            <p>
-              <span className="h2">{people.fullName}</span>
-              <span className="badge bg-primary me-3">{people.age}age </span>
-            </p>
-            <p className="text-muted">{people.bio}</p>
-          </div>
+          <p>
+            <span className="title">{people.fullName}</span>
+          </p>
+          <p className="text-muted">{people.bio}</p>
         </div>
+
       </div>
     </div>
   );
