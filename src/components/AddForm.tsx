@@ -1,7 +1,7 @@
 import { Dispatch, FC, FormEvent, SetStateAction, useState } from "react";
 import PInput from "../components/PInput";
 import "./AddForm.css"
-// import React from "react";
+import React from "react";
 import { TypePeople } from "../page/HomePage";
 
 interface IProps
@@ -11,7 +11,8 @@ interface IProps
 }
 const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
 {
-  // name = React.createRef<PInput>();
+  const name = React.createRef<PInput>();
+
   const [fullName, setFullName] = useState<string>("");
   const [age, setAge] = useState<string | number>("");
   const [img, setImg] = useState<string>("");
@@ -28,6 +29,7 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void =>
   {
     event.preventDefault();
+    console.log(name.current?.getValue())
     if (!fullName)
     {
       return alert("نام و نام خانوادگی الزامی می باشد");
@@ -64,7 +66,7 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
         onSubmit={(e) => handleSubmit(e)}
         className="form"
       >
-        {/* <JAInput title="Name:" placeholder="Please enter name ..." ref={this.name} /> */}
+        <PInput title="fullName:" placeholder="Please enter name ..." ref={name} />
         <input
           type="text"
           className="form-control mb-2"

@@ -1,6 +1,6 @@
 
 import React from "react";
-import Style from "./PInput.module.css";
+import  "./PInput.css";
 
 interface IProps
 {
@@ -34,11 +34,10 @@ export default class PInput extends React.Component<IProps, IState> {
     override render()
     {
         return (
-            <div className={Style.form}>
-                <span className={Style.title}>{this.props.title}</span>
+            <div className="form">
                 <input
                     onChange={this.setValue}
-                    className={Style.ja_input}
+                    className="p_input"
                     placeholder={this.props.placeholder}
                 />
             </div>
