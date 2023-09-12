@@ -1,11 +1,12 @@
 
 import React from "react";
-import  "./PInput.css";
+import "./PInput.css";
 
 interface IProps
 {
     title: string;
     placeholder: string;
+    type: string;
 }
 
 interface IState
@@ -36,6 +37,7 @@ export default class PInput extends React.Component<IProps, IState> {
         return (
             <div className="form">
                 <input
+                    type={this.props.type}
                     onChange={this.setValue}
                     className="p_input"
                     placeholder={this.props.placeholder}

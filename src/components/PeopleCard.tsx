@@ -16,11 +16,11 @@ const PeopleCard: FC<IProps> = ({ people }) =>
             className="img-muted"
             width={100}
             height={100}
-            src={people.img}
-            alt={people.fullName}
+            src={people.image}
+            alt={people.name}
           />
           <p>
-            <span className="title">{people.fullName}</span>
+            <span className="title">{people.name}</span>
           </p>
           <p className="text-muted">{people.bio}</p>
         </div>

@@ -12,97 +12,43 @@ interface IProps
 const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
 {
   const name = React.createRef<PInput>();
+  const age = React.createRef<PInput>();
+  const image = React.createRef<PInput>();
 
-  const [fullName, setFullName] = useState<string>("");
-  const [age, setAge] = useState<string | number>("");
-  const [img, setImg] = useState<string>("");
-  const [bio, setBio] = useState<string>("");
-
-  const handleResetState = (): void =>
+  const handleSubmit = (): void =>
   {
-    setFullName("");
-    setAge("");
-    setImg("");
-    setBio("");
-  };
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>): void =>
-  {
-    event.preventDefault();
-    console.log(name.current?.getValue())
-    if (!fullName)
+    if (name.current?.getValue() && age.current?.getValue() && image.current?.getValue())
     {
-      return alert("نام و نام خانوادگی الزامی می باشد");
-    }
-
-    if (!age)
-    {
-      return alert("سن الزامی می باشد");
-    }
-
-    if (!img)
-    {
-      return alert("آدرس تصویر الزامی می باشد");
-    }
-
-    setPeoples([
-      ...peoples,
-      {
+      const new_people = {
         id: Math.floor(Math.random() * 1000000),
-        fullName,
-        age: Number(age),
-        img,
-        bio,
-      },
-    ]);
-
-    handleResetState();
+        name: String(name.current?.getValue()),
+        age: Number(age.current?.getValue()),
+        image: String(image.current?.getValue()),
+        bio: "test"
+      }
+      setPeoples([
+        ...peoples,
+        new_people
+      ]);
+    }
   };
 
   return (
     <div className="col-md-6 col-lg-6 mx-auto">
-      <form
-        autoComplete="off"
-        onSubmit={(e) => handleSubmit(e)}
-        className="form"
-      >
-        <PInput title="fullName:" placeholder="Please enter name ..." ref={name} />
-        <input
-          type="text"
-          className="form-control mb-2"
-          name="fullName"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-          placeholder="نام و نام خانوادگی"
-        />
-        <input
-          type="number"
-          className="form-control mb-2"
-          name="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-          placeholder="سن"
-        />
-        <input
-          type="text"
-          className="form-control mb-2"
-          name="img_url"
-          value={img}
-          onChange={(e) => setImg(e.target.value)}
-          placeholder="آدرس تصویر پروفایل"
-        />
-        <textarea
+      <PInput title="name:" placeholder="Please enter name ..." type="text" ref={name} />
+      <PInput title="age:" placeholder="Please enter age ..." type="text" ref={age} />
+      <PInput title="image:" placeholder="Please enter image ..." type="text" ref={image} />
+      {/* <textarea
           className="form-control mb-2"
           name="bio"
           value={bio}
           onChange={(e) => setBio(e.target.value)}
           rows={7}
           placeholder="بیوگرافی"
-        />
-        <button type="submit" className="btn btn-success">
-          افزودن به لیست
-        </button>
-      </form>
+        /> */}
+      <button onClick={() => handleSubmit()} className="btn btn-success">
+        افزودن به لیست
+      </button>
     </div>
   );
 };
