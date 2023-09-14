@@ -34,7 +34,7 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
   };
 
   return (
-    <div className="col-md-6 col-lg-6 mx-auto">
+    <div className="parent_form">
       <PInput title="name:" placeholder="Please enter name ..." type="text" ref={name} />
       <PInput title="age:" placeholder="Please enter age ..." type="text" ref={age} />
       <PInput title="image:" placeholder="Please enter image ..." type="text" ref={image} />
