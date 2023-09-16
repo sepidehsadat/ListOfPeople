@@ -1,10 +1,15 @@
-import React from 'react'
-
 import axios from "axios";
 
-export default axios.create({
-    baseURL: "http://localhost:8080/api",
-    headers: {
-        "Content-type": "application/json"
-    }
+const instance = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com/',
 });
+const server = {
+	get: (url: string) => instance.get(url).then(),
+	// post: (url: string, body: {}) => instance.post(url, body).then(),
+	// put: (url: string, body: {}) => instance.put(url, body).then(),
+	// delete: (url: string) => instance.delete(url).then(),
+};
+
+export const requests = {
+	getData: (): Promise<any> => server.get(`posts`),
+};

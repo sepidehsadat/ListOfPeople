@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import PeopleCard from "../components/PeopleCard";
 import Add from "../components/AddForm";
 import profile from "../images/profile.webp"
 import TypePeople from "../types/PTypes"
+import { requests } from "../api/PServer"
 
 const HomePage = () =>
 {
@@ -12,6 +13,16 @@ const HomePage = () =>
     { id: 2, name: "sara", image: profile, bio: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old." },
     { id: 3, name: "sara", image: profile, bio: "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." },
   ]);
+  useEffect(() =>
+  {
+    (async () =>
+    {
+      const songs = await requests.getData();
+      console.log(songs)
+    })();
+
+  }, []);
+
   return (
     <div className="home_page">
       <h4 className="alert alert-info title">People management</h4>
