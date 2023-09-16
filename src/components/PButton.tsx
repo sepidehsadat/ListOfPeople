@@ -1,6 +1,6 @@
 
 import React from "react";
-import "./PInput.css";
+import "./PButton.css";
 
 interface IProps
 {
@@ -20,8 +20,8 @@ export default class PButton extends React.Component<IProps, IState> {
     {
         return (
             <>
-                <button onClick={this.props.onclick} className="btn btn-success" >
-                    افزودن به لیست
+                <button onClick={this.props.onclick} className="p_button" >
+                    Add
                 </button>
             </>
         );

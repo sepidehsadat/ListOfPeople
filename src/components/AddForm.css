@@ -1,4 +1,10 @@
-
-.parent_form{
-
+.parent_form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #a47cf3;
+    border-radius: 20px;
+    padding-bottom: 30px;
 }
