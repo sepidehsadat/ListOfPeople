@@ -26,8 +26,7 @@ export default class PTextArea extends React.Component<IProps, IState> {
     }
     setValue(e: React.ChangeEvent<HTMLTextAreaElement>): void
     {
-        console.log(e)
-        // this.setState({ value: e});
+        this.setState({ value: e.target.value});
     }
     getValue(): string
     {
@@ -38,8 +37,9 @@ export default class PTextArea extends React.Component<IProps, IState> {
         return (
             <div className="form">
                 <textarea
+                    rows={4}
                     className="p_text_area"
-                    onChange={ this.setValue}
+                    onChange={this.setValue}
                     placeholder={this.props.placeholder}
                 />
             </div>

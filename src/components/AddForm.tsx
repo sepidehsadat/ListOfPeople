@@ -3,6 +3,7 @@ import PInput from "../components/PInput";
 import "./AddForm.css"
 import React from "react";
 import { TypePeople } from "../page/HomePage";
+import PTextArea from "./PTextArea";
 
 interface IProps
 {
@@ -14,6 +15,7 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
   const name = React.createRef<PInput>();
   const age = React.createRef<PInput>();
   const image = React.createRef<PInput>();
+  const bio = React.createRef<PTextArea>();
 
   const handleSubmit = (): void =>
   {
@@ -24,7 +26,7 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
         name: String(name.current?.getValue()),
         age: Number(age.current?.getValue()),
         image: String(image.current?.getValue()),
-        bio: "test"
+        bio: String(bio.current?.getValue()),
       }
       setPeoples([
         ...peoples,
@@ -38,15 +40,8 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
       <PInput title="name:" placeholder="Please enter name ..." type="text" ref={name} />
       <PInput title="age:" placeholder="Please enter age ..." type="text" ref={age} />
       <PInput title="image:" placeholder="Please enter image ..." type="text" ref={image} />
-      {/* <textarea
-          className="form-control mb-2"
-          name="bio"
-          value={bio}
-          onChange={(e) => setBio(e.target.value)}
-          rows={7}
-          placeholder="بیوگرافی"
-        /> */}
-      <button onClick={() => handleSubmit()} className="btn btn-success">
+      <PTextArea placeholder="Please enter bio ..." title="bio" ref={bio} />
+      <button onClick={() => handleSubmit()} className="btn btn-success" >
         افزودن به لیست
       </button>
     </div>
