@@ -4,6 +4,7 @@ import "./AddForm.css"
 import React from "react";
 import { TypePeople } from "../page/HomePage";
 import PTextArea from "./PTextArea";
+import PButton from "./PButton";
 
 interface IProps
 {
@@ -19,12 +20,12 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
 
   const handleSubmit = (): void =>
   {
-    if (name.current?.getValue() && age.current?.getValue() && image.current?.getValue())
+    debugger
+    if (name.current?.getValue() && image.current?.getValue())
     {
       const new_people = {
         id: Math.floor(Math.random() * 1000000),
         name: String(name.current?.getValue()),
-        age: Number(age.current?.getValue()),
         image: String(image.current?.getValue()),
         bio: String(bio.current?.getValue()),
       }
@@ -37,13 +38,11 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
 
   return (
     <div className="parent_form">
+      <p className="title">Add People</p>
       <PInput title="name:" placeholder="Please enter name ..." type="text" ref={name} />
-      <PInput title="age:" placeholder="Please enter age ..." type="text" ref={age} />
       <PInput title="image:" placeholder="Please enter image ..." type="text" ref={image} />
       <PTextArea placeholder="Please enter bio ..." title="bio" ref={bio} />
-      <button onClick={() => handleSubmit()} className="btn btn-success" >
-        افزودن به لیست
-      </button>
+      <PButton onclick={handleSubmit} />
     </div>
   );
 };

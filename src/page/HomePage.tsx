@@ -8,7 +8,6 @@ export interface TypePeople
 {
   id: number;
   name: string;
-  age: number;
   image: string;
   bio?: string;
 }
@@ -16,9 +15,9 @@ export interface TypePeople
 const HomePage = () =>
 {
   const [peoples, setPeoples] = useState<TypePeople[]>([
-    { id: 1, name: "sepideh", age: 27, image: profile, bio: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable." },
-    { id: 2, name: "sara", age: 27, image: profile, bio: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old." },
-    { id: 3, name: "sara", age: 27, image: profile, bio: "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." },
+    { id: 1, name: "sepideh", image: profile, bio: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable." },
+    { id: 2, name: "sara", image: profile, bio: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old." },
+    { id: 3, name: "sara", image: profile, bio: "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." },
   ]);
   return (
     <div className="home_page">
