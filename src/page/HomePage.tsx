@@ -3,14 +3,7 @@ import "./HomePage.css";
 import PeopleCard from "../components/PeopleCard";
 import Add from "../components/AddForm";
 import profile from "../images/profile.webp"
-
-export interface TypePeople
-{
-  id: number;
-  name: string;
-  image: string;
-  bio?: string;
-}
+import TypePeople from "../types/PTypes"
 
 const HomePage = () =>
 {

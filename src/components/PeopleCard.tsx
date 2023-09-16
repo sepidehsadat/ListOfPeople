@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { TypePeople } from "../page/HomePage";
+import TypePeople from "../types/PTypes"
 import "./PeopleCard.css";
 
 interface IProps

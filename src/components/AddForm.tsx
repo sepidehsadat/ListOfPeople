@@ -2,7 +2,7 @@ import { Dispatch, FC, FormEvent, SetStateAction, useState } from "react";
 import PInput from "../components/PInput";
 import "./AddForm.css"
 import React from "react";
-import { TypePeople } from "../page/HomePage";
+import TypePeople from "../types/PTypes"
 import PTextArea from "./PTextArea";
 import PButton from "./PButton";
 
