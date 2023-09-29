@@ -5,6 +5,7 @@ import React from "react";
 import TypePeople from "../types/PeopeleType"
 import PTextArea from "./PTextArea";
 import PButton from "./PButton";
+import PTitle from "./PTitle";
 
 interface IProps
 {
@@ -38,7 +39,7 @@ const AddForm: FC<IProps> = ({ peoples, setPeoples }) =>
 
   return (
     <div className="parent_form">
-      <p className="title">Add People</p>
+      <PTitle title="Add People"/>
       <PInput title="name:" placeholder="Please enter name ..." type="text" ref={name} />
       <PInput title="image:" placeholder="Please enter image ..." type="text" ref={image} />
       <PTextArea placeholder="Please enter bio ..." title="bio" ref={bio} />
