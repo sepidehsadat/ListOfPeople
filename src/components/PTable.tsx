@@ -18,13 +18,13 @@ export default class JATable<RecordType extends AnyObject> extends React.Compone
     {
         return (
             <div>
-                <Table<RecordType>
+                {/* <Table<RecordType>
                     rowKey={this.props.rowKey}
-                    columns={this.props.columns}
+                    columns={""}
                     dataSource={this.props.dataSource}
                     scroll={{ x: true }}
                     sortDirections={["ascend", "descend"]}
-                />
+                /> */}
             </div>
         );
     }

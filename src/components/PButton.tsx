@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { FC } from "react";
 import "./PButton.css";
 
 interface IProps
@@ -10,23 +10,18 @@ interface IProps
 interface IState
 { }
 
-export default class PButton extends React.Component<IProps, IState> {
-    constructor(props: IProps)
-    {
-        super(props);
-    }
+const PButton: FC<IProps> = ({ onclick }) =>
+{
 
-    override render()
-    {
-        return (
-            <>
-                <button onClick={this.props.onclick} className="p_button" >
-                    Add
-                </button>
-            </>
-        );
-    }
-}
+    return (
+        <>
+            <button onClick={onclick} className="p_button" >
+                Add
+            </button>
+        </>
+    );
+};
+export default PButton;
 
 
 

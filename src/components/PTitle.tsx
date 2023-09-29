@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import "./PTitle.css";
 
 interface IProps
@@ -8,21 +8,17 @@ interface IProps
 
 interface IState { }
 
-export default class PTitle extends React.Component<IProps, IState> {
-    override render()
-    {
-        return (
-            <header
-                className="title_container"
-            >
-                <h2
-                    className="title"
-                >
-                    {this.props.title}
-                </h2>
-            </header>
-        );
-    }
-}
+const PTitle: FC<IProps> = ({ title }) =>
+{
+
+    return (
+        <header className="title_container" >
+            <h2 className="title">
+                {title}
+            </h2>
+        </header>
+    );
+};
+export default PTitle;
 
 

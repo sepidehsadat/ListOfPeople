@@ -7,6 +7,7 @@ import PeopeleType from "../types/PeopeleType"
 import { getPeopleAll } from "../api/PData"
 import { requests } from "../api/PServer"
 import PTitle from "../components/PTitle";
+import JATable from "../components/PTable";
 
 const HomePage = () =>
 {
@@ -34,6 +35,12 @@ const HomePage = () =>
         ))}
       </div>
       <Add peoples={peoples} setPeoples={setPeoples} />
+      {/* <JATable<PeopeleType>
+        rowKey={"id"}
+        // columns={columns}
+        dataSource={peoples}
+        onclick={false}
+      /> */}
     </div>
   );
 };
