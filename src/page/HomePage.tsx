@@ -4,6 +4,7 @@ import PeopleCard from "../components/PeopleCard";
 import Add from "../components/AddForm";
 import profile from "../images/profile.webp"
 import TypePeople from "../types/PTypes"
+import { getPeopleAll } from "../api/PData"
 import { requests } from "../api/PServer"
 
 const HomePage = () =>
@@ -11,12 +12,13 @@ const HomePage = () =>
   const [peoples, setPeoples] = useState<TypePeople[]>([]);
   useEffect(() =>
   {
-    (async () =>
-    {
-      const songs = await requests.getData();
-      console.log(songs)
-      // setPeoples(songs)
-    })();
+    // (async () =>
+    // {
+    // const songs = await requests.getData();
+    // })();
+    
+    const people = getPeopleAll();
+    setPeoples(people)
 
   }, []);
 
