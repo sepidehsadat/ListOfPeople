@@ -8,17 +8,14 @@ import { requests } from "../api/PServer"
 
 const HomePage = () =>
 {
-  const [peoples, setPeoples] = useState<TypePeople[]>([
-    { id: 1, name: "sepideh", image: profile, bio: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable." },
-    { id: 2, name: "sara", image: profile, bio: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old." },
-    { id: 3, name: "sara", image: profile, bio: "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." },
-  ]);
+  const [peoples, setPeoples] = useState<TypePeople[]>([]);
   useEffect(() =>
   {
     (async () =>
     {
       const songs = await requests.getData();
       console.log(songs)
+      // setPeoples(songs)
     })();
 
   }, []);

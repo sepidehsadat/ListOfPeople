@@ -21,3 +21,4 @@ const server = {
 export const requests = {
     getData: (): Promise<AxiosResponse> => server.get(`posts`),
 };
+
