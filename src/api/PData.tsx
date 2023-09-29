@@ -1,7 +1,7 @@
 
-import TypePeople from "../types/PTypes";
+import PeopeleType from "../types/PeopeleType";
 
-export function getPeopleAll(): TypePeople[]
+export function getPeopleAll(): PeopeleType[]
 {
     return [
         {
