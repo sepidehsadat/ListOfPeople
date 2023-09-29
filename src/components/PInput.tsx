@@ -1,10 +1,9 @@
 
-import React from "react";
+import React, { FC, useState } from "react";
 import "./PInput.css";
 
 interface IProps
 {
-    title: string;
     placeholder: string;
     type: string;
 }
@@ -13,39 +12,34 @@ interface IState
 {
     value: string;
 }
+const PInput: FC<IProps> = ({ placeholder, type }) =>
+{
+    const [input, setInput] = useState("");
 
-export default class PInput extends React.Component<IProps, IState> {
-    constructor(props: IProps)
+    const setValue = (e: React.ChangeEvent<HTMLInputElement>): void =>
     {
-        super(props);
-        this.state = {
-            value: "",
-        };
-        this.setValue = this.setValue.bind(this);
-        this.getValue = this.getValue.bind(this);
+        setInput(e.target.value);
     }
-    setValue(e: React.ChangeEvent<HTMLInputElement>): void
+    const getValue = (): string =>
     {
-        this.setState({ value: e.target.value });
+        return input;
     }
-    getValue(): string
-    {
-        return this.state.value;
-    }
-    override render()
-    {
-        return (
-            <div className="form">
-                <input
-                    type={this.props.type}
-                    onChange={this.setValue}
-                    className="p_input"
-                    placeholder={this.props.placeholder}
-                />
-            </div>
-        );
-    }
-}
+
+    return (
+        <div className="form">
+            <input
+                type={type}
+                onChange={setValue}
+                className="p_input"
+                placeholder={placeholder}
+            />
+        </div>
+    );
+};
+export default PInput;
+
+
+
 
 
 
