@@ -6,6 +6,7 @@ import profile from "../images/profile.webp"
 import PeopeleType from "../types/PeopeleType"
 import { getPeopleAll } from "../api/PData"
 import { requests } from "../api/PServer"
+import PTitle from "../components/PTitle";
 
 const HomePage = () =>
 {
@@ -24,7 +25,7 @@ const HomePage = () =>
 
   return (
     <div className="home_page">
-      <h4 className="alert alert-info title">People management</h4>
+      <PTitle title="People List" />
       <div className="list_people">
         {peoples.map((people) => (
           <>
